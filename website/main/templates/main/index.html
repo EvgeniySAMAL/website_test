@@ -1,11 +1,18 @@
 {%extends 'main/base.html'%}
 
 {%block title%}
-Стартовая страница
+{{title}}
 {%endblock%}
 
 {%block content%}
 <h1>Начальная страница</h1>
+    {%for el in tasks %}
+    <dif class="alert alert-warning mt-2">
+         <h3>{{el.title}}</h3>
+        <h4>{{el.task}}</h4>
+        <h5>{{el.technology}}</h5>
+    </dif>
+    {%endfor%}
     <p>Текст на странице</p>
 {%endblock%}
 
