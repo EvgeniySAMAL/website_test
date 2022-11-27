@@ -7,18 +7,18 @@
 {%block content%}
 <h1>Начальная страница</h1>
 <hr>
+{% if tasks %}
     {%for el in tasks %}
     <dif class="alert alert-warning mt-2">
-
          <h3>{{el.title}}</h3>
         <h4>{{el.task}}</h4>
-        <h5>{{el.technology}}</h5>
-
+        <p>{{el.technology}}</p>
     </dif>
     {%endfor%}
-    <hr>
-    <p>Текст на странице</p>
-{%endblock%}
+    {% else %}
+    <p>У вас нет никаких записей</p>
+    {% endif %}
+      {%endblock%}
 
 
 

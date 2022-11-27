@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Task
 
 def index(request):
-    tasks = Task.objects.all()
+    tasks = Task.objects.order_by('-id')
     return render(request,'main/index.html', {'title':'Стартовая страница', 'tasks':tasks})
 
 def pictures(request):
@@ -10,3 +10,6 @@ def pictures(request):
 
 def about(request):
     return render(request,'main/about.html')
+
+def create(request):
+    return render(request,'main/create.html')
