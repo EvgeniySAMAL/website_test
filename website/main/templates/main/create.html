@@ -4,23 +4,15 @@
 Создать новую задачу
 {%endblock%}
 
-{%block content%}
-<<<<<<< HEAD
+{% block content %}
 <h1>Создать новую задачу</h1>
   <form method="post">
-
-      <input type="text" placeholder="Введите название"  class="form-control"><br>
-      <textarea type="text" placeholder="Введите описание" class="form-control"></textarea><br>
-      <button type="submit" class="btn btn-success">Добавить</button>
+      {% csrf_token %}
+      {{form.title}}<br><br>
+      {{form.task}}<br><br>
+      {{form.technology}}<br><br>
+      <span>{{error}}</span>
+      <button class="btn btn-success" type="submit" >Добавить</button>
 
   </form>
-
-=======
-<h1>создать новую задачу</h1>
-<form method="post">
-  <input type="text" placeholder="Введите название"  class="form-control"><br>
-  <textarea type="text" placeholder="Введите описание" class="form-control"></textarea><br>
-  <button type="submit" class="btn btn-success">Добавить</button>
-</form>
->>>>>>> origin/master
 {%endblock%}
